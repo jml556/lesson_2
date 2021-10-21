@@ -5,38 +5,6 @@ let userChoice = '';
 let keepPlaying;
 let roundsPlayed = 0;
 
-function chooseHand() {
-  const randomNum = Math.ceil(Math.random() * 3)
-  switch(randomNum) {
-    case 1:
-      return 'rock';
-    case 2:
-      return 'paper';
-    case 3:
-      return 'scissor';
-  }
-}
-
-function yesOrNo(res) {
-  let response = res.trim().toLowerCase();
-  let value = response === 'yes' ? true : false
-  if(value == false) console.log('Awww')
-  return value
-}
-
-function checkIfValid(string) {
-  switch(string) {
-    case 'rock':
-      return true;
-    case 'scissors':
-      return true;
-    case 'paper':
-      return true;
-    default:
-      return false;
-  }
-}
-
 console.log('Do you want to play rock paper scissors? Yes or No?')
 keepPlaying = yesOrNo(readline.question())
 
@@ -50,7 +18,7 @@ while(keepPlaying) {
     console.log('You need to enter a valid option and restart')
     break;
   }
-
+ç
   if((userChoice == 'rock' && computerChoice == 'rock') || 
     (userChoice == 'scissors' && computerChoice == 'scissors') || 
     (userChoice == 'paper' && computerChoice == 'paper')) {
@@ -81,4 +49,35 @@ while(keepPlaying) {
   }
 }
 
+function chooseHand() {
+  const randomNum = Math.ceil(Math.random() * 3)
+  switch(randomNum) {
+    case 1:
+      return 'rock';
+    case 2:
+      return 'paper';
+    case 3:
+      return 'scissor';
+  }
+}
+
+function yesOrNo(res) {
+  let response = res.trim().toLowerCase();
+  const value = response === 'yes' ? true : false
+  if(value == false) console.log('Awww')
+  return value
+}
+
+function checkIfValid(string) {
+  switch(string) {
+    case 'rock':
+      return true;
+    case 'scissors':
+      return true;
+    case 'paper':
+      return true;
+    default:
+      return false;
+  }
+}
 console.log(`Before you go, here is the final score: \nRounds played: ${roundsPlayed} \nGames won: ${scoreCount}`)
