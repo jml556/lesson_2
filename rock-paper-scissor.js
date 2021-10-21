@@ -21,7 +21,7 @@ function yesOrNo(res) {
   let response = res.trim().toLowerCase();
   let value = response === 'yes' ? true : false
   if(value == false) console.log('Awww')
-  return response
+  return value
 }
 
 function checkIfValid(string) {
@@ -60,5 +60,25 @@ while(keepPlaying) {
     keepPlaying = yesOrNo(readline.question())
     if(!keepPlaying) break;
   }
+
+  else if ((userChoice == 'rock' && computerChoice == 'scissors') || 
+  (userChoice == 'scissors' && computerChoice == 'paper') || 
+  (userChoice == 'paper' && computerChoice == 'rock')) {
+    roundsPlayed++;
+    scoreCount++;
+    console.log('Wow you won against the computer!')
+    console.log('Play again?')
+    keepPlaying = yesOrNo(readline.question())
+    if(!keepPlaying) break;
+  }
+
+  else {
+    roundsPlayed++;
+    console.log('Wow you lost against the computer!')
+    console.log('Play again?')
+    keepPlaying = yesOrNo(readline.question())
+    if(!keepPlaying) break;
+  }
 }
 
+console.log(`Before you go, here is the final score: \nRounds played: ${roundsPlayed} \nGames won: ${scoreCount}`)
