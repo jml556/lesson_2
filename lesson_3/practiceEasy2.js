@@ -59,3 +59,28 @@ function flatten(arr) {
 
 console.log(flatten(arr))
 */
+
+/*
+let flintstones = { Fred: 0, Wilma: 1, Barney: 2, Betty: 3, Bambam: 4, Pebbles: 5 };
+const barney = Object.keys(flintstones)
+
+const arr = [barney[barney.indexOf('Barney')], flintstones.Barney]
+
+function createArr(obj, val) {
+  const arr = []
+  for(const prop in obj) {
+    if(prop === val) {
+      arr.push(prop, obj[prop])
+    }
+  }
+  return arr
+}
+
+console.log(createArr(flintstones, 'Betty'))
+*/
+
+
+let statement1 = "The Flintstones Rock!".toLowerCase().split('').reduce((acc, item) => {if(item === 'f'){return acc += 1} return acc} ,0)
+
+console.log(statement1)
+let statement2 = "Easy come, easy go.";
